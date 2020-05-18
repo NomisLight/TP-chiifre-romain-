@@ -1,0 +1,66 @@
+#choisir un nombre
+nombre = int(input("Choisir un nombre pour le convertir en chiffre romain"))
+
+# définition de la fontion
+def chiffreromain (nombre):
+
+    chiffre_romain = ""
+
+#While répète l'action
+
+    while nombre >= 1000 :
+        chiffre_romain += "M"
+        nombre -= 1000
+
+    if nombre >= 900 :
+        chiffre_romain += "CM"
+        nombre -= 900
+
+    if nombre >= 500 :
+        chiffre_romain += "D"
+        nombre -= 500
+
+    if nombre >= 400 :
+        chiffre_romain += "CD"
+        nombre -= 400
+
+    while nombre >= 100 :
+        chiffre_romain += "C"
+        nombre -= 100
+
+    if nombre >= 90 :
+        chiffre_romain += "XC"
+        nombre -= 90
+
+    if nombre >= 50:
+        chiffre_romain += "L"
+        nombre -= 50
+
+    if nombre >= 40:
+        chiffre_romain += "XL"
+        nombre -= 40
+
+    while nombre >= 10:
+        chiffre_romain += "X"
+        nombre -= 10
+
+    if nombre == 9:
+        chiffre_romain += "IX"
+        nombre -= 9
+
+    if nombre >= 5:
+        chiffre_romain += "V"
+        nombre -= 5
+    if nombre == 4:
+        chiffre_romain += "IV"
+        nombre -= 4
+
+    while nombre > 0:
+        chiffre_romain += "I"
+        nombre -= 1
+
+#Print le résultat
+    print(chiffre_romain)
+
+#appel de la fonction
+chiffreromain(nombre)
